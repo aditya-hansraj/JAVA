@@ -4,38 +4,6 @@ import java.util.Scanner;
 class SingleLinkedList<T>{
     Node head=null;
     static Scanner sc = new Scanner(System.in);
-    SingleLinkedList(){
-        System.out.print("Do you want to add Nodes?(1/0): ");
-        int c = sc.nextInt();
-
-        if(c == 1){
-
-            Node newNode = new Node();
-            newNode = newNode.newNode();
-            newNode = head;
-        
-
-            System.out.print("Do you want to add more Nodes?(1/0): ");
-            c = sc.nextInt();
-            Node current = head;
-            while(c != 0){
-                current.next = current.newNode();
-                current = current.next;
-                System.out.print("Do you want to add more Nodes?(1/0): ");
-                c = sc.nextInt();
-            }
-
-            System.out.print("Do you want to list all Nodes?(1/0): ");
-            c = sc.nextInt();
-            if(c == 1){
-                this.display();
-            }
-        }
-
-    }
-
-     
-    
     // Node tail=null;
     class Node<T>{    // head.next=tail;
         T data;
@@ -48,20 +16,6 @@ class SingleLinkedList<T>{
             this.data=data;
             next=null;
         }
-        Node<T> newNode(){
-        System.out.println("Enter Data: ");
-
-            Node newNode;
-            if(this.data instanceof Integer)
-                newNode = new Node<Integer>(sc.nextInt());
-            else if(this.data instanceof String)
-                newNode = new Node<String>(sc.nextLine());
-            else if(this.data instanceof Character)
-                newNode = new Node<Character>(sc.next().charAt(0));
-            else
-                newNode = null;
-            return newNode;
-    }
     }
 
     void insertAtEnd(T data){
