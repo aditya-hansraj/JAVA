@@ -1,5 +1,3 @@
-package Projects;
-
 import java.util.Scanner;
 
 interface GameInterface{
