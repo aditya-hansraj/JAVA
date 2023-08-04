@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class DoubleLinkedList<T>{
 	static Scanner sc = new Scanner(System.in);
-
 	private class Node{
 		T data;
 		Node pre;
@@ -187,26 +186,35 @@ public class DoubleLinkedList<T>{
 			switch(sc.nextInt()){
 				case 1:
 					dl.displayF();
+					break;
 				case 2:
 					dl.displayB();
+					break;
 				case 3:
 					System.out.println("Enter data: ");
 					dl.insertB(sc.nextInt());
+					break;
 				case 4:
 					System.out.println("Enter data: ");
 					dl.insertE(sc.nextInt());
+					break;
 				case 5:
 					dl.deleteB();
+					break;
 				case 6:
 					dl.deleteE();
+					break;
 				case 7:
 					System.out.println("Enter data: ");
 					dl.insertA(sc.nextInt());
+					break;
 				case 8:
 					dl.deleteA();
+					break;
 				case 0:
 					System.out.println("Program End !");
 					System.exit(0);
+					break;
 				
 				default:
 					System.out.println("Invalid Input !\nTry Again !");
