@@ -25,12 +25,12 @@ public class TicTacToe implements GameInterface{
 	public void markAt(int p) throws IllegalArgumentException{
 		int i,j;
 		switch(p){
-			case 1->{
+			case 7->{
 				i = j = 0;
-			}case 2->{
+			}case 8->{
 				i = 0;
 				j = 1;
-			}case 3->{
+			}case 9->{
 				i = 0;
 				j = 2;
 			}case 4->{
@@ -42,13 +42,13 @@ public class TicTacToe implements GameInterface{
 			}case 6->{
 				i = 1;
 				j = 2;
-			}case 7->{
+			}case 1->{
 				i = 2;
 				j = 0;
-			}case 8->{
+			}case 2->{
 				i = 2;
 				j = 1;
-			}case 9->{
+			}case 3->{
 				i = 2;
 				j = 2;
 			}default->throw new IllegalArgumentException("Invalid Position !");
@@ -103,14 +103,14 @@ public class TicTacToe implements GameInterface{
 	}
 
 	private int fill(int i,int j){
-		return (i==0)?(j==0)?1:(j == 1)?2:3:(i==1)?(j==0)?4:(j == 1)?5:6:(j==0)?7:(j==1)?8:9;
+		return (i==2)?(j==0)?1:(j==1)?2:3:(i==1)?(j==0)?4:(j==1)?5:6:(j==0)?7:(j==1)?8:9;
 	}
 	
 	public void printBoard() {
-		System.out.println("  0 1 2 ");
+		// System.out.println("  0 1 2 ");
 
 		for(int i=0;i<3;i++){
-			System.out.print(i+"|");
+			System.out.print("|");
 			for(int j=0;j<3;j++){
 				switch(board[i][j]){
 					case 1->System.out.print("x|");
@@ -150,18 +150,21 @@ public class TicTacToe implements GameInterface{
 				i = winningPlayer = size = 0;
 				System.out.println("If you want to continue press 1: ");
 				choice = sc.nextInt();
+				t = new TicTacToe();
 			}
 			else if(winningPlayer == -1) {
 				System.out.println("CONGRATULATIONS !\nWinner : "+p2);
 				i = winningPlayer = size = 0;
 				System.out.println("If you want to continue press 1: ");
 				choice = sc.nextInt();
+				t = new TicTacToe();
 			}
 			else if(size == 9) {
 				System.out.println("TIE !");
 				i = winningPlayer = size = 0;
 				System.out.println("If you want to continue press 1: ");
 				choice = sc.nextInt();
+				t = new TicTacToe();
 			}
 		}
 		System.out.println("Game Finished !\nThank You For Playing !");
